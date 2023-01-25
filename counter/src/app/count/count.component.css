@@ -1,0 +1,14 @@
+.btn {
+    margin-right: 5px;
+}
+
+.count{
+    margin-top: 20px;
+}
+
+.form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+}
