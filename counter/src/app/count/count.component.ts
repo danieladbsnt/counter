@@ -10,7 +10,8 @@ export class CountComponent implements OnInit {
 source = timer (1000,1000);
 subscription: any;
 isStart!:boolean;
-value = 1;
+initValue = 0;
+inputValue: number = 1;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,8 +20,11 @@ value = 1;
 start() {
   console.log('start');
   this.isStart == true;
-  this.subscription = this.source.subscribe(val => val = this.value++)
-  
+  if (this.inputValue === 1) {
+    this.subscription = this.source.subscribe(val => val = this.initValue++)
+  } else {
+    this.subscription = this.source.subscribe(val => val = this.initValue += this.inputValue)
+  }
 }
 
 pause() {
@@ -31,20 +35,14 @@ pause() {
 
 reset(){
   console.log('reset');
-  this.value = 0;
+  this.initValue = 0;
 }
 
 countUp() {
-  this.value++
+  this.initValue++
 }
 
 countDown() {
-  this.value--
+  this.initValue--
 }
 }
-
-/*
-https://www.learnrxjs.io/learn-rxjs/operators/creation/timer
-https://www.learnrxjs.io/learn-rxjs/operators/transformation/map
-
- */
