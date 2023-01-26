@@ -1,26 +1,28 @@
-<h1>0</h1>
+<h1>{{value}}</h1>
 <h4>Setup</h4>
 <div>
-<button class="btn" mat-raised-button color="primary">Start</button>
-<button class="btn" mat-raised-button color="primary">Pause</button>
-<button class="btn" mat-raised-button color="primary">Reset</button>
+<button (click)="start()" class="btn" mat-raised-button color="primary">Start</button>
+<button (click)="pause()" class="btn" mat-raised-button color="primary">Pause</button>
+<button (click)="reset()" class="btn" mat-raised-button color="primary">Reset</button>
 </div>
 <h4 class="count">Count</h4>
 <div>
-    <button class="btn" mat-raised-button color="primary">Count up</button>
-    <button class="btn" mat-raised-button color="primary">Count down</button>
+    <button (click)="countUp()" class="btn" mat-raised-button color="primary">Count up</button>
+    <button (click)="countDown()" class="btn" mat-raised-button color="primary">Count down</button>
     </div>
 
 <form class="form example-form">
 
   <mat-form-field class="example-full-width">
     <mat-label>Set to</mat-label>
-    <input matInput value="0">
+    <input matInput type="number" value="0">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Step</mat-label>
-    <input matInput type="number" value="0">
+    <input matInput type="number" value="1">
   </mat-form-field>
 
 </form>
+
+<p>{{value}}</p>
